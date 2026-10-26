@@ -1,0 +1,19 @@
+erDiagram
+  USERS {
+    int id PK
+    text name
+    text email UK
+  }
+  PROJECTS {
+    int project_id PK
+    text name
+    text description
+  }
+  TASKS {
+    int task_id PK
+    text title
+    int user_id FK
+    int project_id FK
+  }
+  USERS ||--o{ TASKS : assigned
+  PROJECTS ||--o{ TASKS : contains
